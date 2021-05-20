@@ -7,6 +7,8 @@ import { CheckWriterRouter } from "./Routes/checkWriterRouter";
 import { TicTacToeService } from "./Services/tictactoeService";
 import bodyParser = require("body-parser");
 import { CheckWriterService } from "./Services/checkWriterService";
+import { CalculatorService } from "./Services/calculatorService";
+import { CalculatorRouter } from "./Routes/calculatorRoute";
 
 const app = express()
 const port = 3000
@@ -17,7 +19,13 @@ const ticTacToeRouter = new TicTacToeRouter(ticTacToeService);
 const checkWriterService = new CheckWriterService();
 const checkWriterRouter = new CheckWriterRouter(checkWriterService);
 
+const calculatorService = new CalculatorService();
+const calculatorRouter = new CalculatorRouter(calculatorService);
+
 app.use('/api', bodyParser.json())
+
+// APIs for bootcamp
+app.post('/api/calculator', (req: Request, res: Response) => calculatorRouter.addNumbers(req, res))
 
 // APIs for tick tack toe game 
 app.get('/api/ttt/game', (req: Request, res: Response) => ticTacToeRouter.getGame(req, res) )

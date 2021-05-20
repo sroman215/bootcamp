@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTabsModule } from "@angular/material/tabs";
 import { MatButtonModule } from '@angular/material/button';
 import { TicTacToeComponent } from './tic-tac-toe/tic-tac-toe.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { TicTacToeComponent } from './tic-tac-toe/tic-tac-toe.component';
     BrowserAnimationsModule,
     MatTabsModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
