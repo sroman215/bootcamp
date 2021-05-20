@@ -4,6 +4,7 @@
   "description": "NodeJS/ExpressJS and Angular App for T-Mobile Interview",
   "scripts": {
     "test": "mocha dist/test/ || exit 0",
+    "build:prod": "npx tsc",
     "build": "npx tsc -w ",
     "start": "npx tsc && nodemon --inspect dist/api/app.js"
   },
