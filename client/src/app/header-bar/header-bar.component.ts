@@ -9,11 +9,7 @@ import { Adder } from "../../../../api/Models/Adder";
 })
 export class HeaderBarComponent implements OnInit {
 
-  public num1: number;
-  public num2: number;
-  public result: number;
-
-  constructor(private http: HttpClient) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
@@ -24,14 +20,5 @@ export class HeaderBarComponent implements OnInit {
 
   navToGame() { 
     
-  }
-
-  async submit() {
-    try {
-      const reqObj: Adder = {num1: this.num1, num2: this.num2}
-      this.result = <number>await this.http.post('/api/calculator', reqObj).toPromise(); 
-    } catch (err) {
-      console.log(err.error)
-    }
   }
 }

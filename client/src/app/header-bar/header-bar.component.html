@@ -1,21 +1,6 @@
 <mat-tab-group mat-stretch-tabs>
     <mat-tab label="Boot Camp">
-        <div class="bootcamp-wrapper">
-            <div>
-                <mat-form-field>
-                    <mat-label>Number 1</mat-label>
-                    <input matInput type=number [(ngModel)]="num1">
-                </mat-form-field>
-                <mat-form-field>
-                    <mat-label>Number 2</mat-label>
-                    <input matInput type=number [(ngModel)]="num2">
-                </mat-form-field>
-            </div>
-            <div style="display: grid;">
-                <button mat-raised-button color="primary" (click)=submit()>Submit</button>
-                <h2 *ngIf="result">Result: {{result}}</h2>
-            </div>
-        </div>
+        <app-calculator></app-calculator>
     </mat-tab>
     <mat-tab label="Tic Tac Toe" [disabled]=true>
         <app-tic-tac-toe></app-tic-tac-toe>

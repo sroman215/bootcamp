@@ -10,13 +10,15 @@ import { MatTabsModule } from "@angular/material/tabs";
 import { MatButtonModule } from '@angular/material/button';
 import { TicTacToeComponent } from './tic-tac-toe/tic-tac-toe.component';
 import { FormsModule } from '@angular/forms';
+import { CalculatorComponent } from './calculator/calculator.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderBarComponent,
     AngularSetupComponent,
-    TicTacToeComponent
+    TicTacToeComponent,
+    CalculatorComponent
   ],
   imports: [
     BrowserModule,
