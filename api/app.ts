@@ -36,7 +36,7 @@ app.delete('/api/ttt', (req: Request, res: Response) => ticTacToeRouter.resetGam
 app.post('/api/checkwriter', (req: Request, res: Response) => checkWriterRouter.getValue(req, res))
 
 // Default route used to serve the frontend
-app.use('/', express.static(path.join(__dirname, '../client')));
+app.use('/client', express.static(path.join(__dirname, '../client')));
 
 // Start listening on the port
 app.listen(port, () => console.log(`App listening at http://localhost:${port}`))
