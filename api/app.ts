@@ -9,9 +9,11 @@ import bodyParser = require("body-parser");
 import { CheckWriterService } from "./Services/checkWriterService";
 import { CalculatorService } from "./Services/calculatorService";
 import { CalculatorRouter } from "./Routes/calculatorRoute";
+import http = require('http');
+
 
 const app = express()
-const port = 3000
+const port = process.env.PORT || 3000
 
 const ticTacToeService = new TicTacToeService()
 const ticTacToeRouter = new TicTacToeRouter(ticTacToeService);
@@ -38,5 +40,11 @@ app.post('/api/checkwriter', (req: Request, res: Response) => checkWriterRouter.
 // Default route used to serve the frontend
 app.use('/', express.static(path.join(__dirname, '../client')));
 
+const server = http.createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/html');
+  res.end('<h1>Hello World</h1>');
+});
+
 // Start listening on the port
-app.listen(port, () => console.log(`App listening at http://localhost:${port}`))
+server.listen(port, () => console.log(`App listening at http://localhost:${port}`))
