@@ -11,6 +11,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { TicTacToeComponent } from './tic-tac-toe/tic-tac-toe.component';
 import { FormsModule } from '@angular/forms';
 import { CalculatorComponent } from './calculator/calculator.component';
+import { CalcFrontendComponent } from './calc-frontend/calc-frontend.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { CalculatorComponent } from './calculator/calculator.component';
     HeaderBarComponent,
     AngularSetupComponent,
     TicTacToeComponent,
-    CalculatorComponent
+    CalculatorComponent,
+    CalcFrontendComponent
   ],
   imports: [
     BrowserModule,
