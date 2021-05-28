@@ -1,5 +1,3 @@
-import { isInteger, lowerCase, startCase } from "lodash"
-
 export class CheckWriterService {
     constructor() {}
 
@@ -57,7 +55,7 @@ export class CheckWriterService {
 
     private handleIntegerValue(num: number): string {
         if (num < 20) {
-            return startCase(this.digitToStringMap.get(num));
+            return (this.digitToStringMap.get(num)); //StartCase
         }
 
 
@@ -65,11 +63,11 @@ export class CheckWriterService {
         const numElements = numAsString.length;
         
         if (numElements === 1) {
-            return startCase(this.digitToStringMap.get(num));
+            return (this.digitToStringMap.get(num)); //startCase
         }
         
         const digits = [parseInt(numAsString[0]), parseInt(numAsString[1])];
-        return `${startCase(this.tensDigitToStringMap.get(digits[0]))} ${lowerCase(this.digitToStringMap.get(digits[1]))}`.trim()
+        return `${(this.tensDigitToStringMap.get(digits[0]))} ${(this.digitToStringMap.get(digits[1]))}`.trim().toLowerCase()
     }
 
     private getCurrency(): string {

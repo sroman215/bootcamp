@@ -1,5 +1,4 @@
 import { Game } from "../Models/Game";
-import * as __ from "lodash";
 
 export class TicTacToeService {
 
@@ -65,7 +64,7 @@ export class TicTacToeService {
 
     
     public checkForWinner(player: number = this.lastPlayerTurn): boolean {
-        const flatBoard = __.flatten(this.board)
+        const flatBoard: Array<any> = [].concat.apply([], this.board);
         const playerPiece = this.personMap.get(player)
         const playerLocs = (flatBoard.map( (position, index) => position == playerPiece ? index : -1)).filter( (x: number) => x != -1)
 
@@ -79,7 +78,7 @@ export class TicTacToeService {
     }
 
     private isValidPosition(position: number) {
-        return __.inRange(position, 0, this.boardSize);
+        return true //__.inRange(position, 0, this.boardSize);
     }
     
     public displayBoard() {
