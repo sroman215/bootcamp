@@ -41,9 +41,9 @@ app.post('/api/checkwriter', (req: Request, res: Response) => checkWriterRouter.
 app.use('/', express.static(path.join(__dirname, '../client')));
 
 const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/html');
-  res.end('<h1>Hello World</h1>');
+//   res.statusCode = 200;
+//   res.setHeader('Content-Type', 'text/html');
+//   res.end(express.static(path.join(__dirname, '../client')));
 });
 
 // Start listening on the port
