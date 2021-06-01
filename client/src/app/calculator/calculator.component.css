@@ -1,13 +1,11 @@
-.bootcamp-wrapper { 
-    padding: 20px; 
-    display: table-caption
-}
-
-.bootcamp-wrapper > .div { 
-    padding: 10px;
-}
-
 h2 {
     padding-top: 5px;
     margin: auto;
+}
+
+.center {
+    padding-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

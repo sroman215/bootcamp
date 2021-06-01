@@ -1,16 +1,18 @@
-<div class="bootcamp-wrapper">
+<div class="center">
     <div>
-        <mat-form-field>
-            <mat-label>Number 1</mat-label>
-            <input matInput type=number [(ngModel)]="num1">
-        </mat-form-field>
-        <mat-form-field>
-            <mat-label>Number 2</mat-label>
-            <input matInput type=number [(ngModel)]="num2">
-        </mat-form-field>
-    </div>
-    <div style="display: grid;">
-        <button mat-raised-button color="primary" (click)=submit()>Submit</button>
-        <h2 *ngIf="result">Result: {{result}}</h2>
+        <div>
+            <mat-form-field style="padding-right: 10px;">
+                <mat-label>Number 1</mat-label>
+                <input matInput type=number [(ngModel)]="num1">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Number 2</mat-label>
+                <input matInput type=number [(ngModel)]="num2">
+            </mat-form-field>
+        </div>
+        <div style="display: grid;">
+            <button mat-raised-button color="primary" (click)=submit()>Add Numbers</button>
+            <h2 *ngIf="result">Result: {{result}}</h2>
+        </div>
     </div>
 </div>

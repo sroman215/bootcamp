@@ -10,6 +10,7 @@ export class CalculatorRouter {
 
     public addNumbers(req: Request, res: Response) {
         const adder: Adder = <Adder> req.body;
-        res.status(200).json(this.calcService.addNumbers(adder.num1, adder.num2))
+        const response = {sum: this.calcService.addNumbers(adder.num1, adder.num2)};
+        res.status(200).json(response)
     }
 }

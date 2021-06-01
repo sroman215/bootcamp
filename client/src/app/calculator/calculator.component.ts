@@ -21,7 +21,8 @@ export class CalculatorComponent implements OnInit {
   async submit() {
     try {
       const reqObj: Adder = {num1: this.num1, num2: this.num2}
-      this.result = <number>await this.http.post('/api/calculator', reqObj).toPromise(); 
+      const result = <any>await this.http.post('/api/calculator', reqObj).toPromise(); 
+      this.result = result.sum
     } catch (err) {
       console.log(err.error)
     }
