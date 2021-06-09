@@ -67,8 +67,13 @@ export class CheckWriterService {
         }
         
         const digits = [parseInt(numAsString[0]), parseInt(numAsString[1])];
-        return `${(this.tensDigitToStringMap.get(digits[0]))} ${(this.digitToStringMap.get(digits[1]))}`.trim().toLowerCase()
+        let val:string = `${(this.tensDigitToStringMap.get(digits[0]))} ${(this.digitToStringMap.get(digits[1]))}`.trim().toLowerCase()
+        return this.capitalizeFirstLetter(val)
     }
+
+    private capitalizeFirstLetter(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+      }
 
     private getCurrency(): string {
         return 'dollars'

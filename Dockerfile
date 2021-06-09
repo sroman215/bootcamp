@@ -7,12 +7,12 @@ WORKDIR /app
 
 # Copy the package.json so I can run an npm install
 COPY . /app/
-RUN npm run build   
+RUN npm install
 
 # Exposing Port 3000 since thats what the server listens to
 EXPOSE 3000
 
 # Use the npm start command
-CMD [ "npm", "start" ]
+CMD [ "node", "dist/api/app.js" ]
 
 ###################################################
